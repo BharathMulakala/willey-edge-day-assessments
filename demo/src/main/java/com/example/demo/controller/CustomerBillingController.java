@@ -3,26 +3,34 @@ package com.example.demo.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.entity.CustomerBillingDetails;
-import com.example.demo.serviceimpl.CustomerBillingServiceImpl;
+import com.example.demo.service.CustomerBillingService;
 
 @RestController
 public class CustomerBillingController {
 	
 	@Autowired
-	public CustomerBillingServiceImpl customerBillingServiceImpl;
-	
+	public CustomerBillingService customerBillingService;
+	/**
+	 * 
+	 * @param customerId
+	 * @return
+	 */
+	@GetMapping("/fetchbycustomerid/{customerId}")
 	public List<CustomerBillingDetails> fetchByCustomerId(@PathVariable("customerId") int customerId){
-		return customerBillingServiceImpl.fetchByCustomerId(customerId);
+		return customerBillingService.fetchByCustomerId(customerId);
 	}
+	@GetMapping("/fetchbycustomeridandmonth/{customerId}/{month}")
 	public CustomerBillingDetails fetchByCustomerIdAndMonth(@PathVariable("customerId") int customerId,@PathVariable("month") String month) {
-		return customerBillingServiceImpl.fetchByCustomerIdAndMonth(customerId, month);
+		return customerBillingService.fetchByCustomerIdAndMonth(customerId, month);
 	}
+	@GetMapping("/fetchbytotalbill")
 	public void calculateTotalBill(CustomerBillingDetails customerBillingDetails) {
-		customerBillingServiceImpl.calculateTotalBill(customerBillingDetails);
+		customerBillingService.calculateTotalBill(customerBillingDetails);
 	}
 	
 
