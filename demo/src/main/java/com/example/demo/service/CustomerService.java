@@ -14,7 +14,5 @@ public interface CustomerService {
 	public void saveCustomer(Customer customer);
 	public List<Customer> fetchAllCoustomers();
 	public void updateCustomer(Customer customer);
-	public List<Customer> fetchByMonth(String month);
-	public void calculateTotalBill(Customer customer);
 
 }

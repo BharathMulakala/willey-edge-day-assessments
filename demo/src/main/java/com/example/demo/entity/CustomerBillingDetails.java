@@ -7,8 +7,18 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
+
 @Table
 @Entity
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@ToString
+
 public class CustomerBillingDetails {
 	@Column(name="BILLING_ID")
 	@Id
@@ -24,50 +34,37 @@ public class CustomerBillingDetails {
 	@Column(name="MONTH")
 	public String month;
 	@Column(name="TOTAL_BILL")
-	public int totalBill;
-
-	public CustomerBillingDetails() {
-
+	public double totalBill;
+	public int getBillingId() {
+		return billingId;
 	}
-
-	public CustomerBillingDetails(int customerId, int unitsConsumed, String month, int totalBill) {
-		super();
-		this.customerId = customerId;
-		this.unitsConsumed = unitsConsumed;
-		this.month = month;
-		this.totalBill = totalBill;
+	public void setBillingId(int billingId) {
+		this.billingId = billingId;
 	}
-
 	public int getCustomerId() {
 		return customerId;
 	}
-
 	public void setCustomerId(int customerId) {
 		this.customerId = customerId;
 	}
-
 	public int getUnitsConsumed() {
 		return unitsConsumed;
 	}
-
 	public void setUnitsConsumed(int unitsConsumed) {
 		this.unitsConsumed = unitsConsumed;
 	}
-
 	public String getMonth() {
 		return month;
 	}
-
 	public void setMonth(String month) {
 		this.month = month;
 	}
-
-	public int getTotalBill() {
+	public double getTotalBill() {
 		return totalBill;
 	}
-
-	public void setTotalBill(int totalBill) {
+	public void setTotalBill(double totalBill) {
 		this.totalBill = totalBill;
 	}
+
 
 }

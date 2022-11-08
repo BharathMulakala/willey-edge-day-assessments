@@ -14,6 +14,7 @@ public interface CustomerBillingService {
 	public List<CustomerBillingDetails> fetchByCustomerId(int customerId);
 	public CustomerBillingDetails fetchByCustomerIdAndMonth(int customerId,String month);
 	public void calculateTotalBill(CustomerBillingDetails customerBillingDetails);
+	
      
 }
  

@@ -24,7 +24,7 @@ public class CustomerBillingServiceImpl implements CustomerBillingService {
 		
 		return customerBillingRepository.findByCustomerIdAndMonth(customerId, month);
 	}
-
+    @Override
 	public void calculateTotalBill(CustomerBillingDetails customerBillingDetails) {
 
 		int n =customerBillingDetails.getUnitsConsumed();

@@ -9,6 +9,6 @@ import com.example.demo.entity.CustomerBillingDetails;
 
 @Repository
 public interface CustomerBillingRepository extends JpaRepository<CustomerBillingDetails,Integer> {
-     public List<CustomerBillingDetails> findByCustomerId(int customerId);
-     public CustomerBillingDetails findByCustomerIdAndMonth(int customerId,String month);
+     List<CustomerBillingDetails> findByCustomerId(int customerId);
+     CustomerBillingDetails findByCustomerIdAndMonth(int customerId,String month);
 }

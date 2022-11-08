@@ -33,9 +33,5 @@ public class CustomerController {
 		customerService.updateCustomer(customer);
 	}
 
-	@GetMapping("/fetchbymonth/{month}")
-	public List<Customer> fetchByMonth(@PathVariable("month") String month) {
-		return customerService.fetchByMonth(month);
-	}
-
+	
 }
